@@ -1,0 +1,88 @@
+# This is a sample build configuration for other languages.
+# Check our guides at https://confluence.atlassian.com/x/VYk8Lw for more examples.
+# Only use spaces to indent your .yml configuration.
+# -----
+# You can specify a custom docker image from Docker Hub as your build environment.
+# image: docker-image:tag
+
+#image: python:2.7
+image: node:8.11.3
+options:
+  docker: true
+
+pipelines:
+  custom:
+
+  branches:  # Pipelines that run automatically on a commit to a branch
+    master:
+      - step:
+          script:
+            - yarn install
+            - yarn build-production
+            # Install Google Cloud SDK
+            - export CLOUDSDK_CORE_DISABLE_PROMPTS=1
+            # Google Cloud SDK is pinned for build reliability. Bump if the SDK complains about deprecation.
+            - SDK_VERSION=230.0.0
+            - SDK_FILENAME=google-cloud-sdk-${SDK_VERSION}-linux-x86_64.tar.gz
+            - curl -O -J https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/${SDK_FILENAME}
+            - tar -zxvf ${SDK_FILENAME} --directory ${HOME}
+            - export PATH=${PATH}:${HOME}/google-cloud-sdk/bin
+            # Install Google App Engine SDK
+            - GAE_PYTHONPATH=${HOME}/google_appengine
+            - export PYTHONPATH=${PYTHONPATH}:${GAE_PYTHONPATH}
+            - echo ${FETCH_GAE_SDK} | base64 --decode >>  ~/fetch_gae_sdk.py
+            - python ~/fetch_gae_sdk.py $(dirname "${GAE_PYTHONPATH}")
+            - echo "${PYTHONPATH}" && ls ${GAE_PYTHONPATH}
+            - echo "key = '${GOOGLE_API_KEY}'" > api_key.py
+            - echo ${GOOGLE_CLIENT_SECRET} > client-secret.json
+            - gcloud auth activate-service-account --key-file client-secret.json
+            - sed -i "4i \ service:\ ff-web-prod" app.yaml
+            - gcloud --quiet --verbosity=error app deploy app.yaml --promote
+    ff-web-staging:
+      - step:
+          script:
+            - yarn install
+            - yarn build-staging
+            # Install Google Cloud SDK
+            - export CLOUDSDK_CORE_DISABLE_PROMPTS=1
+            # Google Cloud SDK is pinned for build reliability. Bump if the SDK complains about deprecation.
+            - SDK_VERSION=230.0.0
+            - SDK_FILENAME=google-cloud-sdk-${SDK_VERSION}-linux-x86_64.tar.gz
+            - curl -O -J https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/${SDK_FILENAME}
+            - tar -zxvf ${SDK_FILENAME} --directory ${HOME}
+            - export PATH=${PATH}:${HOME}/google-cloud-sdk/bin
+            # Install Google App Engine SDK
+            - GAE_PYTHONPATH=${HOME}/google_appengine
+            - export PYTHONPATH=${PYTHONPATH}:${GAE_PYTHONPATH}
+            - echo ${FETCH_GAE_SDK} | base64 --decode >>  ~/fetch_gae_sdk.py
+            - python ~/fetch_gae_sdk.py $(dirname "${GAE_PYTHONPATH}")
+            - echo "${PYTHONPATH}" && ls ${GAE_PYTHONPATH}
+            - echo "key = '${GOOGLE_API_KEY}'" > api_key.py
+            - echo ${GOOGLE_CLIENT_SECRET} > client-secret.json
+            - gcloud auth activate-service-account --key-file client-secret.json
+            - sed -i "4i \ service:\ sl-v3-staging" app.yaml
+            - gcloud --quiet --verbosity=error app deploy app.yaml --promote
+    ff-web-qa:
+      - step:
+          script:
+            - yarn install
+            - yarn build-qa
+            # Install Google Cloud SDK
+            - export CLOUDSDK_CORE_DISABLE_PROMPTS=1
+            # Google Cloud SDK is pinned for build reliability. Bump if the SDK complains about deprecation.
+            - SDK_VERSION=230.0.0
+            - SDK_FILENAME=google-cloud-sdk-${SDK_VERSION}-linux-x86_64.tar.gz
+            - curl -O -J https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/${SDK_FILENAME}
+            - tar -zxvf ${SDK_FILENAME} --directory ${HOME}
+            - export PATH=${PATH}:${HOME}/google-cloud-sdk/bin
+            # Install Google App Engine SDK
+            - GAE_PYTHONPATH=${HOME}/google_appengine
+            - export PYTHONPATH=${PYTHONPATH}:${GAE_PYTHONPATH}
+            - echo ${FETCH_GAE_SDK} | base64 --decode >>  ~/fetch_gae_sdk.py
+            - python ~/fetch_gae_sdk.py $(dirname "${GAE_PYTHONPATH}")
+            - echo "${PYTHONPATH}" && ls ${GAE_PYTHONPATH}
+            - echo "key = '${GOOGLE_API_KEY}'" > api_key.py
+            - echo ${GOOGLE_CLIENT_SECRET} > client-secret.json
+            - gcloud auth activate-service-account --key-file client-secret.json
+            - sed -i "4i \ service:\ ff-web-qa" app.yaml
+            - gcloud --quiet --verbosity=error app deploy app.yaml --promote

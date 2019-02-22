@@ -1,0 +1,94 @@
+html{
+  background-image: linear-gradient(-217deg,#9B42DA 0%, #51509C 62%), linear-gradient(52deg, #031327 2%, #053369 100%);
+
+}
+.is-danger {
+  border-color: #d9534f !important;
+}
+
+/* spin */
+.cover-spin {
+  position:fixed;
+  width:100%;
+  left:0;right:0;top:0;bottom:0;
+  background-color: rgba(255,255,255,0.7);
+  z-index:9999;
+  //display:none;
+}
+
+@-webkit-keyframes spin {
+  from {-webkit-transform:rotate(0deg);}
+  to {-webkit-transform:rotate(360deg);}
+}
+
+@keyframes spin {
+  from {transform:rotate(0deg);}
+  to {transform:rotate(360deg);}
+}
+
+.cover-spin::after {
+  content:'';
+  display:block;
+  position:absolute;
+  left:48%;top:40%;
+  width:40px;height:40px;
+  border-style:solid;
+  border-color:black;
+  border-top-color:transparent;
+  border-width: 4px;
+  border-radius:50%;
+  -webkit-animation: spin .8s linear infinite;
+  animation: spin .8s linear infinite;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+.slide-fade-enter-active {
+  transition: all .5s ease;
+}
+.slide-fade-leave-active {
+  transition: all .5s ease;
+}
+.slide-fade-enter, .slide-fade-leave-to
+  /* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
+}
+.slide-from-right-leave-active {
+  transition: 0.3s ease;
+}
+
+.slide-from-right-enter-active {
+  transition: 0.3s ease;
+  transition-delay: 0.3s;
+}
+
+.slide-from-right-enter {
+  transform: translate(-50%, 0);
+  // position: absolute;
+  opacity: 0;
+}
+
+.slide-from-right-leave-to {
+  opacity: 0;
+  transform: translate(50%, 0);
+  // position: absolute;
+}
+
+.btn-space{
+  margin: 5px;
+}
+
+.text-contact-danger{
+  color: #c9a5a5 !important;
+}
+
+.text-left{
+  text-align: left !important;
+}

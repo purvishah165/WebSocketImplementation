@@ -1,0 +1,199 @@
+$fa-font-path: "~font-awesome/fonts";
+
+// Color
+$white:                     #fff !default;
+$black:                     #000 !default;
+$black-light:               #233065 !default;
+$black-lighter:             #2E3C54 !default;
+$red:                       #b81c23 !default;
+$negative-red:              #d34041 !default;
+$dark-red:                  #581c19 !default;
+$wine-red:                  #d34040 !default;
+$light-wine-red:            #c9a5a5 !default;
+$orange:                    #f0ad4e !default;
+$yellow:                    #44c0b9 !default;
+$light-yellow:              #44c0b9 !default;
+// $green:                     #5cb85c !default;
+$blue:                      #002e5d !default;
+$water-blue:                #007bff !default;
+$light-blue:                #e8f6fa !default;
+$teal:                      #5bc0de !default;
+$dark-teal:                 #38c5ab !default;
+$pink:                      #ff5b77 !default;
+$purple:                    #793dcf !default;
+$dark-purple:               #57005b !default;
+$arctic-blue:               #1e4889 !default;
+$light-arctic-blue:         #44c0b9 !default;
+$mid-blue:                  #1E4889 !default;
+$green:                     #25d06f !default;
+$magenta:                   #9E267E !default;
+$fuschia:                   #CD158D !default;
+
+// Create grayscale
+$gray-darker:               #292b2c !default;
+$gray-dark:                 #919191 !default;
+$gray-bluer:                #a2b4bc !default;
+$gray-secondary:            #e4e4e5 !default;
+$gray:                      #545454 !default;
+$gray-light:                #CDCFD2 !default;
+$gray-lighter:              #ebebeb !default;
+$gray-very-light:           #f8f9fd !default;
+$gray-lightest:             #F5F5F6 !default;
+$gray-bg:                 #e8e8e8 !default;
+
+// Reassign color vars to semantic color scheme
+// $brand-primary:             $blue !default;
+$brand-primary:             $mid-blue !default;
+$brand-success:             $green !default;
+$brand-info:                $teal !default;
+$brand-warning:             $orange !default;
+$brand-danger:              $red !default;
+$brand-inverse:             $gray-darker !default;
+
+
+// Layout color
+$bodyColor:                 $mid-blue !default;
+$sideMenu:                  $gray-lightest !default;
+$attentionColor:            $dark-red !default;
+$sectionHeader:             $gray-dark !default;
+$menuSectionTitle:          $gray-bluer !default;
+//$inputBorder:               $gray-light !default;
+$inputBorder:               $gray-lighter !default;
+$backgroundColor:           $white !default;
+$customerPrimaryColor:      $yellow !default;
+$customSecondaryColor:      $arctic-blue !default;
+$activeColor:               $black-light !default; //credable blue deep
+
+$cursor-disabled:          not-allowed !default;
+
+$custom-control-disabled-cursor:    $cursor-disabled !default;
+
+@mixin btn-admin($color, $hover-color) {
+  color: $white !important;
+  background-color: $color;
+  border-radius: 30px;
+  border-color: $color;
+  font-weight: bold;
+  cursor: pointer;
+  &:hover {
+    border-color: $hover-color;
+    background-color: $hover-color;
+    color: $white !important;
+  }
+}
+
+@mixin btn-admin-inverted($color) {
+  color: $color !important;
+  background-color: $white;
+  border-radius: 30px;
+  border-color: $color;
+  font-weight: bold;
+  &:hover {
+    border-color: $color;
+    background-color: $color;
+    color: $white !important;
+  }
+  &.hover {
+    border-color: $color;
+    background-color: $color;
+    color: $white !important;
+  }
+}
+
+// Color Text
+.arctic-blue {
+  color: $arctic-blue !important;
+}
+
+.light-arctic-blue {
+  color: $light-arctic-blue !important;
+}
+
+.header-color {
+  color: $sectionHeader !important;
+}
+.color-primary-purple{
+  color: $purple !important;
+}
+.color-purple{
+  background: $purple !important; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left,$black-light 0%, $light-arctic-blue 50%, $purple 75%) !important; /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(left,$black-light 0%, $light-arctic-blue 50%, $purple 75%) !important; /* For Opera 11.1 to 12.0 */
+  background: linear-gradient(to right,$black-light 0%, $light-arctic-blue 50%, $purple 75%) !important; /* Standard syntax */
+}
+.color-primary-blue{
+  background-color: $black-light !important;
+}
+.color-primary-arctic-blue{
+  background: $light-arctic-blue !important; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left,$black-light 0%, $light-arctic-blue 100%) !important; /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(left,$black-light 0%, $light-arctic-blue 80%) !important; /* For Opera 11.1 to 12.0 */
+  background: linear-gradient(to right,$black-light 0%, $light-arctic-blue 100%) !important; /* Standard syntax */
+}
+
+.color-fuschia{
+  background: $fuschia !important; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left,$black-light 0%, $light-arctic-blue 50%, $fuschia 75%) !important; /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(left,$black-light 0%, $light-arctic-blue 50%, $fuschia 75%) !important; /* For Opera 11.1 to 12.0 */
+  background: linear-gradient(to right,$black-light 0%, $light-arctic-blue 50%, $fuschia 75%) !important; /* Standard syntax */
+}
+
+.color-yellow {
+  color: $yellow !important;
+}
+
+.color-green {
+  color: $green !important;
+}
+
+.negative-red {
+  color: $negative-red !important;
+}
+
+.color-red {
+  color: $negative-red !important;
+}
+
+.color-wine-red{
+  color: $attentionColor !important;
+}
+.color-black{
+  color: $black;
+}
+.color-white{
+  color: $white;
+}
+.color-blue{
+  color: $water-blue;
+}
+.color-para-gray{
+  color: #8c8c8c;
+}
+.required{
+  font-size: 7px;
+  color: red;
+  padding-left: 5px;
+  vertical-align: top;
+}
+.link{
+    text-decoration: underline;
+    color: $light-arctic-blue ;
+}
+.text-wrap{
+  word-wrap: break-word;
+  word-break: break-word;
+  text-align: justify;
+}
+.text-contact-danger{
+  color: $light-wine-red;
+}
+.text-normal{
+  font-weight: normal;
+  font-weight: normal;
+}
+.margin-50{
+  margin-top: 50px;
+}
+.disable-click{
+  cursor: $cursor-disabled !important;
+}

@@ -1,0 +1,30 @@
+ runtime: python27
+ api_version: 3
+ threadsafe: true
+ network:
+   instance_tag: ff-web-qa
+ skip_files:
+  - ^(?!dist).*$
+
+ handlers:
+ - url: /
+   static_files: dist/index.html
+   upload: dist/index.html
+#   http_headers:
+#       Content-Security-Policy-Report-Only: "default-src 'self';
+#                                             img-src 'self' data:;
+#                                             script-src 'self' 'unsafe-eval' www.google.com/recaptcha/api.js?onload=vueRecaptchaApiLoaded&render=explicit;
+#                                             style-src 'self';
+#                                             font-src 'self' data: fonts.gstatic.com use.fontawesome.com/1cd196cc2d.js netdna.bootstrapcdn.com/font-awesome;
+#                                             report-uri /sl_csp_report_parser"
+
+ - url: /(.*\.(gif|png|svg|jpg|ico|css|js|txt|pdf))$
+   static_files: dist/\1
+   upload: dist/.*\.(gif|png|svg|jpg|ico|css|js|txt|pdf)$
+
+ - url: /(.*)
+   static_files: dist/index.html
+   upload: dist/(.*)
+
+
+

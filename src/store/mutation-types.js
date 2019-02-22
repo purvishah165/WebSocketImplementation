@@ -1,0 +1,10 @@
+/* Product  Details */
+export const GET_PRODUCTS = 'GET_PRODUCTS'
+export const UPDATE_CART_STORE = 'UPDATE_CART_STORE'
+export const UPDATE_STORE_WITH_USER_DATA = 'UPDATE_STORE_WITH_USER_DATA'
+export const CLEAR_STORE = 'CLEAR_STORE'
+export const GET_CART_STORE = 'GET_CART_STORE'
+// smart link
+export const UPDATE_SMART_LINK = 'UPDATE_SMART_LINK'
+export const GET_STATUS = 'GET_STATUS'
+export const UPDATE_STATUS = 'UPDATE_STATUS'

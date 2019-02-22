@@ -1,0 +1,21 @@
+@import "styles/variables";
+
+// npm depencies
+@import "~bootstrap/scss/bootstrap.scss";
+//@import '~vue-toast/dist/vue-toast.min';
+@import "~bootstrap/scss/mixins/breakpoints";
+//@import "~font-awesome/scss/font-awesome";
+@import '~bootstrap-vue/dist/bootstrap-vue.css';
+// Project base
+//@import "styles/base/animate";
+//@import "styles/base/buttons";
+//@import "styles/base/toast";
+//@import "styles/base/font";
+//@import "styles/base/layout";
+//@import "styles/base/responsive";
+//@import "styles/base/modal";
+// Project specific
+
+// Remove bottom two once refined
+@import "styles/global";
+@import "styles/styleguide";

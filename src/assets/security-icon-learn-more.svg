@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="175px" height="52px" viewBox="0 0 175 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 12</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-630.000000, -531.000000)">
+            <g id="Group-12" transform="translate(630.000000, 531.000000)">
+                <text id="Security-tested-and" opacity="0.489412313" font-family="Roboto-Medium, Roboto" font-size="14" font-weight="400" letter-spacing="0.466666847" fill="#FFFFFF">
+                    <tspan x="54" y="15">Security </tspan>
+                    <tspan x="54" y="31" font-family="Roboto-Light, Roboto" font-weight="300">tested and audited</tspan>
+                </text>
+                <text id="Learn-More" font-family="Roboto-Medium, Roboto" font-size="14" font-weight="400" letter-spacing="0.466666847" fill="#7A3DCF">
+                    <tspan x="54" y="47">Learn More</tspan>
+                </text>
+                <g id="Group-11" opacity="0.502798507" fill="#FFFFFF" fill-rule="nonzero">
+                    <path d="M21.9996996,16 C20.3430113,16 19,16.9690807 19,18.1645022 L19,21 L24.9993992,21 L24.9993992,18.2077922 C25.0155207,17.6262671 24.7066132,17.0645305 24.1423036,16.6491961 C23.577994,16.2338617 22.805774,15.9998837 21.9996996,16 Z" id="Shape"></path>
+                    <path d="M43.9953761,13.598 C43.9953761,13.598 32.9846111,11.986 22,0 C11.0153889,11.908 0.00462390341,13.52 0.00462390341,13.52 C0.00462390341,13.52 -0.884606521,43.654 22,52 C44.8846065,43.654 43.9953761,13.598 43.9953761,13.598 Z M30.0292277,35.802 L13.9969262,35.802 L13.9969262,22.802 L16.7692328,22.802 L16.7692328,19.266 C16.7632545,17.8018227 17.3784917,16.4029883 18.4637977,15.4131513 C19.5491037,14.4233144 21.0038947,13.9342109 22.470769,14.066 C25.2558874,14.3768329 27.3302911,16.7676276 27.2307672,19.552 L27.2307672,22.724 L30.0815353,22.724 L30.0292277,35.802 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
