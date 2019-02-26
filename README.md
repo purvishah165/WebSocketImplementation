@@ -1,4 +1,4 @@
-# ff-web-apps
+# Web socket implementation in a VueJS application
 
 # docker set up
  ```
